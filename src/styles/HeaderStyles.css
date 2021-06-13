@@ -1,0 +1,15 @@
+.MuiButton-label {
+  text-transform: capitalize;
+}
+
+.menuIcon {
+  display: none;
+}
+@media screen and (max-width: 670px) {
+  .rightNav {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+}
