@@ -8,7 +8,6 @@ import {
   Typography,
   Button,
   IconButton,
-  Container,
   Drawer,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navbar: {
     backgroundColor: "#5137a0",
-    marginBottom: "20px",
+    // marginBottom: "20px",
   },
   flexHeader: {
     display: "flex",
@@ -45,52 +44,50 @@ const Header = () => {
   return (
     <div>
       <AppBar position="static" className={classes.navbar}>
-        <Container>
-          <Toolbar className={classes.toolbar}>
-            <div className={classes.flexHeader}>
-              <Button color="inherit" disableRipple>
-                <Typography variant="h6">Hamro Furniture</Typography>
-              </Button>
-            </div>
+        <Toolbar className={classes.toolbar}>
+          <div className={classes.flexHeader}>
+            <Button color="inherit" disableRipple>
+              <Typography variant="h6">Hamro Furniture</Typography>
+            </Button>
+          </div>
 
-            <div>
-              <div className="rightNav">
+          <div>
+            <div className="rightNav">
+              {headersData.map((data, index) => (
+                <Button color="inherit" key={index}>
+                  <Typography className={classes.navText}>
+                    {data.label}
+                  </Typography>
+                </Button>
+              ))}
+            </div>
+            <div className="Nav-small-screen">
+              <Drawer
+                anchor="right"
+                open={toggleDrawer}
+                onClose={handleToggleDrawer}
+              >
                 {headersData.map((data, index) => (
-                  <Button color="inherit" key={index}>
+                  <Button
+                    color="inherit"
+                    key={index}
+                    className={classes.drawerButton}
+                    onClick={handleToggleDrawer}
+                  >
                     <Typography className={classes.navText}>
                       {data.label}
                     </Typography>
                   </Button>
                 ))}
-              </div>
-              <div className="Nav-small-screen">
-                <Drawer
-                  anchor="right"
-                  open={toggleDrawer}
-                  onClose={handleToggleDrawer}
-                >
-                  {headersData.map((data, index) => (
-                    <Button
-                      color="inherit"
-                      key={index}
-                      className={classes.drawerButton}
-                      onClick={handleToggleDrawer}
-                    >
-                      <Typography className={classes.navText}>
-                        {data.label}
-                      </Typography>
-                    </Button>
-                  ))}
-                </Drawer>
-              </div>
-              <div className="menuIcon" onClick={handleToggleDrawer}>
-                <IconButton edge="start" color="inherit" aria-label="menu">
-                  <MenuIcon />
-                </IconButton>
-              </div>
+              </Drawer>
             </div>
-          </Toolbar>
-        </Container>
+            <div className="menuIcon" onClick={handleToggleDrawer}>
+              <IconButton edge="start" color="inherit" aria-label="menu">
+                <MenuIcon />
+              </IconButton>
+            </div>
+          </div>
+        </Toolbar>
       </AppBar>
     </div>
   );

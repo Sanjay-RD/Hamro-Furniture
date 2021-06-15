@@ -2,5 +2,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-@media screen and (max-width: 670px) {
+
+.container {
+  width: 100%;
+  margin: auto;
 }
