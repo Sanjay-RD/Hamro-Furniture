@@ -1,48 +1,68 @@
 import React, { useState, useEffect } from "react";
 import { sliderImageData } from "../data/imageData";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { makeStyles, IconButton } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
 import "../styles/SliderStyle.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  btn: {
+    marginTop: "5px",
+  },
+}));
 
 const ImageSlider = () => {
   const classes = useStyles();
-  const [current, setCurrent] = useState(0);
-  const length = sliderImageData.length;
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 900,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
   };
-  const previousSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  console.log(current);
   return (
-    <div className="slider">
-      <div className="left-arrow">
-        <IconButton color="inherit" onClick={previousSlide}>
-          <ArrowBackIosIcon className="arrow" />
-        </IconButton>
-      </div>
-      <div className="right-arrow">
-        <IconButton color="inherit" onClick={nextSlide}>
-          <ArrowForwardIosIcon className="arrow" />
-        </IconButton>
-      </div>
-      {sliderImageData.map((image, index) => (
-        <div
-          className={index === current ? "slide active" : "slide"}
-          key={index}
-        >
-          {index === current && (
-            <img src={image.image} alt="image" className="image" />
-          )}
+    <Slider {...settings}>
+      {sliderImageData.map((image) => (
+        <div>
+          <div className="image-container">
+            {/* <div
+              className="background-img"
+              style={{
+                background: `url(${image.image}) center center / cover no-repeat`,
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                filter: "blur(2px)",
+              }}
+            ></div> */}
+            <div className="background-img">
+              <img src={image.image} alt="" />
+            </div>
+            <div className="flex-2">
+              <div className="image-content">
+                <h3>
+                  Buy any furniture product <br /> online with low price.
+                </h3>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.btn}
+                >
+                  Buy Now
+                </Button>
+              </div>
+              <div className="slider-image-container">
+                <img className="slider-image" src={image.image} alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       ))}
-    </div>
+    </Slider>
   );
 };
 
