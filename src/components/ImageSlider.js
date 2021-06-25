@@ -28,17 +28,6 @@ const ImageSlider = () => {
       {sliderImageData.map((image) => (
         <div>
           <div className="image-container">
-            {/* <div
-              className="background-img"
-              style={{
-                background: `url(${image.image}) center center / cover no-repeat`,
-                objectFit: "cover",
-                width: "100%",
-                height: "100%",
-                position: "absolute",
-                filter: "blur(2px)",
-              }}
-            ></div> */}
             <div className="background-img">
               <img src={image.image} alt="" />
             </div>

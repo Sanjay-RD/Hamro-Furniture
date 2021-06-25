@@ -1,17 +1,17 @@
 import "./App.css";
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSlider";
-
-import { Container } from "@material-ui/core";
+import ProductCategoryOne from "./components/ProductCategoryOne";
 
 const App = () => {
   return (
     <div>
       <Header />
       <ImageSlider />
-      <Container>
+      <div className="container">
+        <ProductCategoryOne />
         <h2>Hamro Furnuture</h2>
-      </Container>
+      </div>
     </div>
   );
 };
