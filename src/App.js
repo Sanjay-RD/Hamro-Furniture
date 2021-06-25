@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSlider";
-import ProductCategoryOne from "./components/ProductCategoryOne";
+import ProductCategory from "./components/ProductCategory";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Header />
       <ImageSlider />
       <div className="container">
-        <ProductCategoryOne />
+        <ProductCategory />
         <h2>Hamro Furnuture</h2>
       </div>
     </div>

@@ -24,6 +24,11 @@ const categoryData = [
     title: "Table Product",
     item: 22,
   },
+  {
+    image: rack,
+    title: "Rack Product",
+    item: 30,
+  },
 ];
 
 export default categoryData;

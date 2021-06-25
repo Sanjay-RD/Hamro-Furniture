@@ -20,10 +20,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "10px 15px",
   },
-  btn: {
-    marginRight: 10,
-    padding: 4,
-  },
 }));
 const ProductCategoryOne = () => {
   const classes = useStyles();
