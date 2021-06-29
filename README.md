@@ -1,1 +1,1 @@
-## Live Demo : [hamro-furniture](https://hopeful-edison-f20770.netlify.app/)
+## Live Demo : [hamro-furniture](https://cranky-albattani-a9e312.netlify.app/)
