@@ -4,6 +4,10 @@
   overflow-x: hidden;
 }
 
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
 .container {
   width: 80%;
   margin: auto;
