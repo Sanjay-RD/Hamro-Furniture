@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { makeStyles, Link } from "@material-ui/core";
 import "../styles/NewArrival.css";
-import bed from "../images/category/bed.jpg";
 
-import SearchIcon from "@material-ui/icons/Search";
-import LocalMallIcon from "@material-ui/icons/LocalMall";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import NewArrivalBox from "./NewArrivalBox";
 
-import newArrivalData from "../data/newArrivalData";
-
-const useStyles = makeStyles((theme) => ({}));
+import {
+  newArrivalData,
+  newBedArrivalData,
+  newDarazArrivalData,
+  newRackArrivalData,
+  newTableArrivalData,
+  newOtherArrivalData,
+} from "../data/newArrivalData";
 
 const NewArrival = () => {
-  const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
-
   const [isActive1, setIsActive1] = useState(true);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
@@ -115,55 +113,18 @@ const NewArrival = () => {
                 onClick={handleClick6}
                 className={isActive6 ? "active" : undefined}
               >
-                Furniture
+                Other
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="image-section">
-        <div className="grid">
-          {newArrivalData.map((product) => (
-            <div className="product__item" id={product.title}>
-              <div className="product__item__pic">
-                <img src={product.image} alt={product.title} />
-                <ul className="product__item__hover">
-                  <li>
-                    <a href="#">
-                      <span>
-                        <SearchIcon />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span>
-                        <LocalMallIcon />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span>
-                        <FavoriteBorderIcon />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="product__item__text">
-                <h5>
-                  <a href="#">{product.title}</a>
-                </h5>
-                <div className="price">Rs.{product.price}</div>
-                <a href="#" className="cart-btn">
-                  Add to cart
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {isActive1 && <NewArrivalBox products={newArrivalData} />}
+      {isActive2 && <NewArrivalBox products={newBedArrivalData} />}
+      {isActive3 && <NewArrivalBox products={newDarazArrivalData} />}
+      {isActive4 && <NewArrivalBox products={newTableArrivalData} />}
+      {isActive5 && <NewArrivalBox products={newRackArrivalData} />}
+      {isActive6 && <NewArrivalBox products={newOtherArrivalData} />}
     </div>
   );
 };
