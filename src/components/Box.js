@@ -6,7 +6,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 import Fade from "react-reveal/Fade";
 
-const NewArrivalBox = ({ products }) => {
+const Box = ({ products }) => {
   return (
     <div className="image-section">
       <Fade right cascade>
@@ -56,4 +56,4 @@ const NewArrivalBox = ({ products }) => {
   );
 };
 
-export default NewArrivalBox;
+export default Box;

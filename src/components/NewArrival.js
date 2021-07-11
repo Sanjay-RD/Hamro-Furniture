@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/NewArrival.css";
 
-import NewArrivalBox from "./NewArrivalBox";
+import Box from "./Box";
 
 import {
   newArrivalData,
@@ -119,12 +119,12 @@ const NewArrival = () => {
           </div>
         </div>
       </div>
-      {isActive1 && <NewArrivalBox products={newArrivalData} />}
-      {isActive2 && <NewArrivalBox products={newBedArrivalData} />}
-      {isActive3 && <NewArrivalBox products={newDarazArrivalData} />}
-      {isActive4 && <NewArrivalBox products={newTableArrivalData} />}
-      {isActive5 && <NewArrivalBox products={newRackArrivalData} />}
-      {isActive6 && <NewArrivalBox products={newOtherArrivalData} />}
+      {isActive1 && <Box products={newArrivalData} />}
+      {isActive2 && <Box products={newBedArrivalData} />}
+      {isActive3 && <Box products={newDarazArrivalData} />}
+      {isActive4 && <Box products={newTableArrivalData} />}
+      {isActive5 && <Box products={newRackArrivalData} />}
+      {isActive6 && <Box products={newOtherArrivalData} />}
     </div>
   );
 };
