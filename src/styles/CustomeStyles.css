@@ -1,0 +1,52 @@
+.custom_design {
+  display: flex;
+  background: radial-gradient(rgb(81 55 160), rgb(41 41 41));
+  align-items: center;
+  margin: 70px 0px;
+  padding: 20px 0px;
+}
+
+.custom_content {
+  flex-basis: 40%;
+}
+
+.custome-image {
+  flex-basis: 60%;
+}
+
+.custome-image img {
+  width: 100% !important;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.custome-title {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+.custom_design h2 {
+  color: #ffffff;
+  font-size: 45px;
+  line-height: 1.4;
+  margin-bottom: 42px;
+  font-family: "Lobster", cursive;
+}
+
+.MuiButton-label {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 670px) {
+  .custom_design {
+    display: block;
+  }
+  .custome-image {
+    margin-top: 30px;
+  }
+}

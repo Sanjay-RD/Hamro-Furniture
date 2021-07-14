@@ -190,6 +190,18 @@ a {
   bottom: 0px;
 }
 
+.view__all {
+  text-align: center;
+}
+.view__all a {
+  text-transform: uppercase;
+  font-weight: bold;
+  word-spacing: 4px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
 @media (min-width: 992px) {
   .col-lg-12 {
     -ms-flex: 0 0 100%;

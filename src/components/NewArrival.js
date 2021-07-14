@@ -125,6 +125,9 @@ const NewArrival = () => {
       {isActive4 && <Box products={newTableArrivalData} />}
       {isActive5 && <Box products={newRackArrivalData} />}
       {isActive6 && <Box products={newOtherArrivalData} />}
+      <div className="view__all">
+        <a href="#">View All Products</a>
+      </div>
     </div>
   );
 };
