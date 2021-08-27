@@ -7,6 +7,7 @@ import { Button, makeStyles } from "@material-ui/core";
 import "../styles/CustomeStyles.css";
 
 import rack from "../images/category/rack.jpg";
+import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -52,6 +53,7 @@ const HomeScreen = () => {
           <img src={rack} alt="rack.." />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

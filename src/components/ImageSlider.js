@@ -20,38 +20,40 @@ const ImageSlider = () => {
     speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
   };
   return (
-    <Slider {...settings}>
-      {sliderImageData.map((image) => (
-        <div>
-          <div className="image-container">
-            <div className="background-img">
-              <img src={image.image} alt="" />
-            </div>
-            <div className="flex-2">
-              <div className="image-content">
-                <h3>
-                  Buy any furniture product <br /> online with low price.
-                </h3>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.btn}
-                >
-                  Buy Now
-                </Button>
+    <div style={{ overflow: "hidden" }}>
+      <Slider {...settings}>
+        {sliderImageData.map((image) => (
+          <div>
+            <div className="image-container">
+              <div className="background-img">
+                <img src={image.image} alt="" />
               </div>
-              <div className="slider-image-container">
-                <img className="slider-image" src={image.image} alt="" />
+              <div className="flex-2">
+                <div className="image-content">
+                  <h3>
+                    Buy any furniture product <br /> online with low price.
+                  </h3>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.btn}
+                  >
+                    Buy Now
+                  </Button>
+                </div>
+                <div className="slider-image-container">
+                  <img className="slider-image" src={image.image} alt="" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

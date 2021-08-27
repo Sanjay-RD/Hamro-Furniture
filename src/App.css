@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -11,4 +11,12 @@ body {
 .container {
   width: 80%;
   margin: auto;
+}
+
+.MuiListItemIcon-root {
+  min-width: 30px !important;
+}
+.MuiListItem-root {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
